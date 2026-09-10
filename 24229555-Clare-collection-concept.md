@@ -1,0 +1,9 @@
+My subject is the traditional street newsstand. Nowadays, you rarely see them anymore because everyone goes to convenience stores for daily things, reads news on the internet, and advertisers prefer online ads. Economic and social changes are making these stalls disappear, which makes me feel a quiet pity for them every time I walk past. Even though my own memories of them are already getting a bit blurry, I hope future generations like my grandkids can remember their heyday, and I wanted to preserve them through this collection.
+
+I chose this theme because it feels so deeply personal and relatable. Whenever you ask older generations about newspaper stalls, they always light up with little stories and memories that instantly bring a smile to their faces.
+
+Is it gone entirely, still here but unrecorded, here but changed, or only in memory? Newsstands are here, but they are changing and disappearing piece by piece.
+
+My twenty records capture the things I actually saw, heard, and felt around the newsstand. What brings them all together is an irreplaceable human connection, the human touch. But my collection also admits its own limits. Even when I record the surface details, a digital file or audio recording can never truly capture the real-life warmth, the lived experiences, and the quiet connections shared between the customers and the stallholders.
+
+The most honest not_captured field I wrote is the scent of the newsprint ink—the unique smell of the newspaper that I can always recall whenever I think about it. That particular scent immediately brings back memories of my father buying a newspaper on his way to work in the morning and bringing it home after work. For me as a child, I loved reading the newspaper, especially the comic pages, which added a special kind of joy to my childhood memories.
