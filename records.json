@@ -3,36 +3,168 @@
   "records": [
     {
       "id": "REC-001",
-      "title": "Tulip, third day",
+      "title": "A stack of newspapers in the morning light",
       "type": "image",
-      "file": "media/tulip-01.jpg",
-      "date": "2026-08-12",
-      "place": "kitchen table",
-      "recorder": "Echo",
-      "not_captured": "how far it had already opened that morning",
-      "certainty": 4
+      "file": "media/A stack of newspapers-01.jpeg",
+      "date": "2026-09-01",
+      "place": "Newsstand on Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "the freshness of the early morning air and the damp smell of fresh morning newsprint",
+      "certainty": 5
     },
     {
       "id": "REC-002",
-      "title": "Kitchen, before dinner",
-      "type": "sound",
-      "file": "media/kitchen.mp3",
-      "date": "2026-08-12",
-      "place": "my aunt's flat",
-      "recorder": "Echo",
-      "not_captured": "the smell, and how hot the room was",
-      "certainty": 3
+      "title": "Horse racing tips between magazines.",
+      "type": "text",
+      "file": "media/REC-004.txt",
+      "date": "2026-09-04",
+      "place": "Newsstand on Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "Atmosphere of anxiety and heated discussions when countless horse fans gathered in front of the newsstand",
+      "certainty": 4
     },
     {
       "id": "REC-003",
-      "title": "What she said about the soup",
+      "title": "The high-pitched sound of coins hitting together",
+      "type": "sound",
+      "file": "media/REC-005.mp3",
+      "date": "2026-09-05",
+      "place": "Newsstand on Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "The warmth of palms when changing coins",
+      "certainty": 4
+    },
+    {
+      "id": "REC-004",
+      "title": "Yellow light lit in the evening",
+      "type": "image",
+      "file": "media/Yellow light-04.jpeg",
+      "date": "2026-09-06",
+      "place": "Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "A buzzing sound from an old light tube inside a light box",
+      "certainty": 3
+    },
+    {
+      "id": "REC-005",
+      "title": "Tearing off a page of newspaper",
+      "type": "sound",
+      "file": "media/REC-007.mp3",
+      "date": "2026-09-07",
+      "place": "Newsstand on Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "The resistance at the moment of tearing, and the eagerness of readersto read that news.",
+      "certainty": 4
+    },
+    {
+      "id": "REC-006",
+      "title": "A water bottle of newspaper stall owner to weigh down the newspapers",
+      "type": "image",
+      "file": "media/Water bottle-06.jpeg",
+      "date": "2026-09-09",
+      "place": "Newsstand on Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "The evaporation speed of water droplets in the bottle under the sun, and the aging smell of plastic that has been heated for a long time.",
+      "certainty": 5
+    },
+    {
+      "id": "REC-007",
+      "title": "Flipping newspaper",
+      "type": "sound",
+      "file": "media/REC-010.mp3",
+      "date": "2026-09-10",
+      "place": "Newsstand on Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "The musty smell of old newspaper due to dryness between the pages",
+      "certainty": 4
+    },
+    {
+      "id": "REC-008",
+      "title": "Torn canvas tent to keep out the rain",
+      "type": "image",
+      "file": "media/Red canvas-08.jpeg",
+      "date": "2026-09-11",
+      "place": "Newsstand on Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "The echo of raindrops on the tarp",
+      "certainty": 5
+    },
+    {
+      "id": "REC-009",
+      "title": "Advertisements plastered all over the walls of newsstand",
       "type": "text",
-      "file": "media/description.txt",
-      "date": "2026-08-12",
-      "place": "my aunt's flat",
-      "recorder": "Echo",
-      "not_captured": "her tone. I have written the words but not the way she said them.",
-      "certainty": 2
+      "file": "media/Advertisments.txt",
+      "date": "2026-09-12",
+      "place": "Newsstand on Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "The hardened texture of paper after the glue has dried",
+      "certainty": 4
+    },
+    {
+      "id": "REC-010",
+      "title": "Glass Coke bottles clinking together",
+      "type": "sound",
+      "file": "media/REC-014.mp3",
+      "date": "2026-09-14",
+      "place": "Newsstand on Mong Kok street",
+      "recorder": "Clare",
+      "not_captured": "The cool air of the ice bucket holding drinks",
+      "certainty": 4
+    },
+    {
+      "id": "REC-011",
+      "title": "檔主用原子筆在帳簿上畫的記號",
+      "type": "text",
+      "file": "media/REC-018.txt",
+      "date": "2026-09-18",
+      "place": "九龍城衙前道報攤",
+      "recorder": "Clare",
+      "not_captured": "手部關節因長期勞損而產生的酸痛，以及那本破舊帳簿記錄的微薄利潤。",
+      "certainty": 4
+    },
+    {
+      "id": "REC-012",
+      "title": "傍晚收攤時拍打紙堆的灰塵聲",
+      "type": "sound",
+      "file": "media/REC-020.mp3",
+      "date": "2026-09-20",
+      "place": "銅鑼灣波斯富街報攤",
+      "recorder": "Clare",
+      "not_captured": "空氣中揚起肉眼看不見的微細粉粒與舊紙屑吸入鼻腔時的真實窒息感。",
+      "certainty": 4
+    },
+    {
+      "id": "REC-013",
+      "title": "晨早買報人與檔主默契的打招呼聲",
+      "type": "sound",
+      "file": "media/REC-023.mp3",
+      "date": "2026-09-23",
+      "place": "北角春秧街報紙檔",
+      "recorder": "Clare",
+      "not_captured": "那種數十年老街坊之間無需言語的深厚社區連結與人情味。",
+      "certainty": 4
+    },
+    {
+      "id": "REC-014",
+      "title": "太陽直射下泛黃變脆的副刊封面",
+      "type": "image",
+      "file": "media/REC-024.jpeg",
+      "date": "2026-09-24",
+      "place": "西環德輔道西報攤",
+      "recorder": "Clare",
+      "not_captured": "紫外線對紙張化學結構產生的無情破壞，以及顏色一點一滴褪色的寂靜過程。",
+      "certainty": 5
+    },
+    {
+      "id": "REC-015",
+      "title": "翻閱時沾上指頭的黑色油墨粉粒",
+      "type": "text",
+      "file": "media/REC-025.txt",
+      "date": "2026-09-25",
+      "place": "深水埗長沙灣道報紙檔",
+      "recorder": "Clare",
+      "not_captured": "印刷油墨沾在皮膚上的真實觸感，以及擦拭不掉的物理殘留痕跡。",
+      "certainty": 4
     }
   ]
 }
