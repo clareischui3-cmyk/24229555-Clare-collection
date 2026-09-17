@@ -7,3 +7,9 @@ Is it gone entirely, still here but unrecorded, here but changed, or only in mem
 My twenty records capture the things I actually saw, heard, and felt around the newsstand. What brings them all together is an irreplaceable human connection, the human touch. But my collection also admits its own limits. Even when I record the surface details, a digital file or audio recording can never truly capture the real-life warmth, the lived experiences, and the quiet connections shared between the customers and the stallholders.
 
 The most honest not_captured field I wrote is the scent of the newsprint ink—the unique smell of the newspaper that I can always recall whenever I think about it. That particular scent immediately brings back memories of my father buying a newspaper on his way to work in the morning and bringing it home after work. For me as a child, I loved reading the newspaper, especially the comic pages, which added a special kind of joy to my childhood memories.
+
+Week 2 Classwork github link:
+https://github.com/clareischui3-cmyk/artt3005-24229555Clare/releases/tag/week2
+
+Week 2 Homework github link:
+https://github.com/clareischui3-cmyk/artt3005-24229555Clare/releases

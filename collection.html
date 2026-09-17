@@ -3,26 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Record Card Collection</title>
+    <title>Record Card Collection — Hong Kong Newsstand Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+TC:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f3efe6;
+            /* Nostalgic Hong Kong newsprint & vintage newsstand vibe */
+            background-color: #2b2621;
             margin: 0;
-            font-family: 'Newsreader', serif;
-            color: #2b2621;
+            font-family: 'Newsreader', 'Noto Serif TC', serif;
+            color: #2b2319;
             perspective: 1500px;
             background-image: 
-                radial-gradient(#e5dfd3 1px, transparent 1px),
-                radial-gradient(#e5dfd3 1px, #f3efe6 1px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
+                linear-gradient(rgba(30, 26, 22, 0.85), rgba(30, 26, 22, 0.85)),
+                repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255, 255, 255, 0.02) 3px, rgba(255, 255, 255, 0.02) 6px),
+                radial-gradient(rgba(212, 197, 169, 0.15) 1px, transparent 1px);
+            background-size: auto, auto, 24px 24px;
+        }
+
+        /* Subtle newsprint watermark texture overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            opacity: 0.04;
+            background-image: repeating-linear-gradient(-45deg, #f4ecd8, #f4ecd8 2px, transparent 2px, transparent 40px);
+            z-index: -1;
         }
 
         /* Vintage decorative border headers & footers with archival flourishes */
         .archival-border-top {
-            background: linear-gradient(90deg, transparent, #c8bc8b 15%, #8c816f 50%, #c8bc8b 85%, transparent);
+            background: linear-gradient(90deg, transparent, #c2b292 15%, #f4ecd8 50%, #c2b292 85%, transparent);
             height: 3px;
             width: 100%;
             position: relative;
@@ -31,14 +43,14 @@
             content: "❖";
             position: absolute;
             top: -9px;
-            color: #8c816f;
+            color: #f4ecd8;
             font-size: 14px;
         }
         .archival-border-top::before { left: 5%; }
         .archival-border-top::after { right: 5%; }
 
         .archival-border-bottom {
-            background: linear-gradient(90deg, transparent, #c8bc8b 15%, #8c816f 50%, #c8bc8b 85%, transparent);
+            background: linear-gradient(90deg, transparent, #c2b292 15%, #f4ecd8 50%, #c2b292 85%, transparent);
             height: 3px;
             width: 100%;
             position: relative;
@@ -47,7 +59,7 @@
             content: "❖";
             position: absolute;
             top: -9px;
-            color: #8c816f;
+            color: #f4ecd8;
             font-size: 14px;
         }
         .archival-border-bottom::before { left: 5%; }
@@ -78,6 +90,8 @@
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
             border-radius: 1rem;
+            top: 0;
+            left: 0;
         }
 
         .card-back {
@@ -117,15 +131,15 @@
             width: 6px;
         }
         .always-scrollable::-webkit-scrollbar-track {
-            background: #ede6dc;
+            background: #d8ccb4;
             border-radius: 4px;
         }
         .always-scrollable::-webkit-scrollbar-thumb {
-            background: #b5a895;
+            background: #7a6547;
             border-radius: 4px;
         }
         .always-scrollable::-webkit-scrollbar-thumb:hover {
-            background: #8c816f;
+            background: #4d3f2c;
         }
     </style>
 </head>
@@ -135,10 +149,14 @@
         <div class="archival-border-top mb-4"></div>
         <div class="flex flex-col sm:flex-row sm:items-end justify-between px-2">
             <div>
-                <span class="text-xs uppercase tracking-widest text-[#7a6f5d] font-mono-specimen">Archival Exhibition &bull; Field Collection</span>
-                <h1 id="collectionTitle" class="text-3xl font-serif text-[#36302a] tracking-tight mt-1">Collection Archive</h1>
+                <div class="flex items-center space-x-2">
+                    <span class="inline-block bg-[#8b261b] text-[#f4ecd8] text-[10px] font-mono-specimen font-bold px-2 py-0.5 rounded shadow-sm tracking-widest">香港號外</span>
+                    <span class="text-xs uppercase tracking-widest text-[#d8ceb8] font-mono-specimen">Hong Kong Newsstand Archive &bull; Field Collection</span>
+                </div>
+                <h1 id="collectionTitle" class="text-3xl font-serif text-[#f4ecd8] tracking-tight mt-1 font-bold">Collection Archive</h1>
             </div>
-            <div class="mt-2 sm:mt-0 text-xs text-[#7a6f5d] font-mono-specimen italic">
+            <div class="mt-2 sm:mt-0 text-xs text-[#d8ceb8] font-mono-specimen italic flex items-center space-x-3">
+                <span class="bg-[#1a150f] text-[#f4ecd8] px-2.5 py-1 rounded-md text-[10px] tracking-widest font-bold shadow border border-[#524433]">報攤 ARCHIVE</span>
                 <span>Specimen Series 2026</span>
             </div>
         </div>
@@ -147,18 +165,19 @@
     <main class="w-full max-w-[1550px] mx-auto my-auto">
         <!-- Exactly 4 columns horizontally grid layout across 5 rows -->
         <div id="cardsWrapper" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-4">
-            <!-- Dynamic records populated here via record.json fetch -->
+            <!-- Dynamic records populated here via records.json fetch -->
         </div>
     </main>
 
     <footer class="max-w-[1550px] mx-auto w-full mt-10 text-center">
         <div class="archival-border-bottom mb-4"></div>
-        <p class="text-xs text-[#8c816f] font-mono-specimen tracking-wider">
-            &copy; 2026 Field Archive Project — Click "Archive this" to inspect specimen reverse labels.
-        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-[#d8ceb8] font-mono-specimen px-2">
+            <p class="tracking-wider">&copy; 2026 Hong Kong Field Archive Project — 舊報攤檔案館</p>
+            <p class="mt-2 sm:mt-0 italic opacity-80">"Preserving the fleeting whispers of old street corners & newsprint."</p>
+        </div>
     </footer>
 
-    <div id="toast" class="fixed bottom-5 right-5 bg-[#2b2621] text-[#f3efe6] px-4 py-2 rounded-lg shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none text-xs font-mono-specimen border border-[#544a40]">
+    <div id="toast" class="fixed bottom-5 right-5 bg-[#1a150f] text-[#f4ecd8] px-4 py-2 rounded-lg shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none text-xs font-mono-specimen border border-[#7a6547]">
         Record archived successfully.
     </div>
 
@@ -167,240 +186,8 @@
             loadCollectionData();
         });
 
-        // Fallback dataset matching your 20 records
-        var fallbackCollectionData = {
-            "collection": "ARTT3005 — starter",
-            "records": [
-                {
-                    "id": "REC-001",
-                    "title": "A stack of newspapers in the morning light",
-                    "type": "image",
-                    "file": "media/A stack of newspapers-001.jpeg",
-                    "date": "2026-09-01",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "the freshness of the early morning air and the damp smell of fresh morning newsprint",
-                    "certainty": 5
-                },
-                {
-                    "id": "REC-002",
-                    "title": "Horse racing tips between magazines.",
-                    "type": "image",
-                    "file": "media/Horse racing tips-002.jpeg",
-                    "date": "2026-09-04",
-                    "place": "Newsstand, Connaught Road Central, Central",
-                    "recorder": "Clare",
-                    "not_captured": "Atmosphere of anxiety and heated discussions when countless horse fans gathered in front of the newsstand",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-003",
-                    "title": "The high-pitched sound of coins hitting together",
-                    "type": "sound",
-                    "file": "media/Coins-003.mp3",
-                    "date": "2026-09-05",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "The warmth of palms when changing coins",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-004",
-                    "title": "Yellow light lit in the evening",
-                    "type": "image",
-                    "file": "media/Yellow light-004.jpeg",
-                    "date": "2026-09-06",
-                    "place": "Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "A buzzing sound from an old light tube inside a light box",
-                    "certainty": 3
-                },
-                {
-                    "id": "REC-005",
-                    "title": "Tearing off a page of newspaper",
-                    "type": "sound",
-                    "file": "media/Tearing-005.mp3",
-                    "date": "2026-09-07",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "The resistance at the moment of tearing, and the eagerness of readersto read that news.",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-006",
-                    "title": "A water bottle of newspaper stall owner to weigh down the newspapers",
-                    "type": "image",
-                    "file": "media/Water bottle-006.jpeg",
-                    "date": "2026-09-09",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "The evaporation speed of water droplets in the bottle under the sun, and the aging smell of plastic that has been heated for a long time.",
-                    "certainty": 5
-                },
-                {
-                    "id": "REC-007",
-                    "title": "Flipping newspaper",
-                    "type": "sound",
-                    "file": "media/Flipping-007.mp3",
-                    "date": "2026-09-10",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "The musty smell of old newspaper due to dryness between the pages",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-008",
-                    "title": "Torn canvas tent to keep out the rain",
-                    "type": "image",
-                    "file": "media/Red canvas-008.jpeg",
-                    "date": "2026-09-11",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "The echo of raindrops on the tarp",
-                    "certainty": 5
-                },
-                {
-                    "id": "REC-009",
-                    "title": "Advertisements plastered all over the walls of newsstand",
-                    "type": "text",
-                    "file": "media/Advertisments-009.txt",
-                    "date": "2026-09-12",
-                    "place": "Newsstand, Nga Tsien Road, Kowloon City",
-                    "recorder": "Clare",
-                    "not_captured": "The hardened texture of paper after the glue has dried",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-010",
-                    "title": "Glass Coke bottles clinking together",
-                    "type": "sound",
-                    "file": "media/Glass clinking-010.mp3",
-                    "date": "2026-09-14",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "The cool air of the ice bucket holding drinks",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-011",
-                    "title": "Marks drawn in the account book, by a pen",
-                    "type": "text",
-                    "file": "media/Account book-011.txt",
-                    "date": "2026-09-18",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "Heavy book weight, and the feeling of writing in an old account book",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-012",
-                    "title": "Cigarettes neatly stacked on table, sealed with transparent tape",
-                    "type": "image",
-                    "file": "media/Cigarettes-012.jpeg",
-                    "date": "2026-09-20",
-                    "place": "Newsstand, Percival Street, Causeway Bay",
-                    "recorder": "Clare",
-                    "not_captured": "Smell of cigrettes mix with metal",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-013",
-                    "title": "The greeting between customers and stall owners in the morning",
-                    "type": "text",
-                    "file": "media/Greeting-013.txt",
-                    "date": "2026-09-23",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "That profound sense of community connection and human warmth shared by long-time neighbors—bonds that require no words.",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-014",
-                    "title": "Newspaper that turns yellow and becomes brittle under direct sunlight",
-                    "type": "image",
-                    "file": "media/Yellowish newspaper-014.jpeg",
-                    "date": "2026-09-24",
-                    "place": "Newsstand, Des Voeux Road West, Sai Wan",
-                    "recorder": "Clare",
-                    "not_captured": "The ruthless destruction of the chemical structure of paper by ultraviolet rays, and the silent process of color fading bit by bit.",
-                    "certainty": 5
-                },
-                {
-                    "id": "REC-015",
-                    "title": "Black ink particles on fingers when flipping the newspaper",
-                    "type": "image",
-                    "file": "media/Black ink particles-015.jpeg",
-                    "date": "2026-09-25",
-                    "place": "Newsstand on Cheung Sha Wan Road, Sham Shui Po",
-                    "recorder": "Clare",
-                    "not_captured": "The dry feeling of ink particles on the skin when flipping the newspaper",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-016",
-                    "title": "The newspaper bottom layer softened and turned into a paste after long period of raining",
-                    "type": "image",
-                    "file": "media/Softened newspaper-016.jpeg",
-                    "date": "2026-09-24",
-                    "place": "Newsstand on Mong Kok street",
-                    "recorder": "Clare",
-                    "not_captured": "The heavy organic smell of the newspaper after it has been soaked in water",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-017",
-                    "title": "The old chewing gum stain",
-                    "type": "image",
-                    "file": "media/Old chewing gum stain-017.jpeg",
-                    "date": "2026-09-24",
-                    "place": "Newsstand, Des Voeux Road West, Sai Wan",
-                    "recorder": "Clare",
-                    "not_captured": "The sticky elastic touch when pedestrians step on it",
-                    "certainty": 5
-                },
-                {
-                    "id": "REC-018",
-                    "title": "The vendor rubbing hands for warmth in the cold winter",
-                    "type": "sound",
-                    "file": "media/Rubbing hands-018.mp3",
-                    "date": "2026-09-24",
-                    "place": "Newsstand, Nathan Road, Yau Ma Tei",
-                    "recorder": "Clare",
-                    "not_captured": "The biting, freezing low-temperature environment and the deep physical exhaustion radiating from the body",
-                    "certainty": 3
-                },
-                {
-                    "id": "REC-019",
-                    "title": "The sound of the electric fan spinning",
-                    "type": "sound",
-                    "file": "media/Electric fan spinning-019.mp3",
-                    "date": "2026-09-24",
-                    "place": "Newsstand, Fa Yuen Street, Mong Kok",
-                    "recorder": "Clare",
-                    "not_captured": "The stuffy, humid heat trapped inside the narrow metal stall that the wind failed to blow away",
-                    "certainty": 4
-                },
-                {
-                    "id": "REC-020",
-                    "title": "The newsstand owner calling out to customers",
-                    "type": "text",
-                    "file": "media/Owner calling out-020.txt",
-                    "date": "2026-09-24",
-                    "place": "Newsstand, Hennessy Road, Wan Chai",
-                    "recorder": "Clare",
-                    "not_captured": "The familiar, friendly tone of voice and the living warmth of decades spent interacting with regular neighborhood patrons",
-                    "certainty": 3
-                }
-            ]
-        };
-
         function loadCollectionData() {
-            if (window.location.protocol === 'blob:') {
-                renderCollection(fallbackCollectionData);
-                return;
-            }
-
-            fetch('./record.json?t=' + new Date().getTime(), { cache: 'no-store' })
+            fetch('./records.json?t=' + new Date().getTime(), { cache: 'no-store' })
                 .then(function(response) {
                     if (!response.ok) throw new Error('Network response was not ok');
                     return response.json();
@@ -409,8 +196,9 @@
                     renderCollection(data);
                 })
                 .catch(function(error) {
-                    console.warn('Live fetch restricted; loading fallback dataset:', error);
-                    renderCollection(fallbackCollectionData);
+                    console.error('Failed to load records.json:', error);
+                    var wrapper = document.getElementById('cardsWrapper');
+                    wrapper.innerHTML = '<div class="col-span-full text-center py-16 font-mono-specimen text-[#d8ceb8]"><p class="text-sm font-bold">Failed to load records.json.</p><p class="text-xs mt-2 text-[#c2b292]">Please ensure records.json is present in the directory.</p></div>';
                 });
         }
 
@@ -425,7 +213,7 @@
             var records = data.records || [];
 
             if (records.length === 0) {
-                wrapper.innerHTML = '<div class="col-span-full text-center py-16 font-mono-specimen text-[#7a6f5d]"><p class="text-sm">No records found in record.json.</p></div>';
+                wrapper.innerHTML = '<div class="col-span-full text-center py-16 font-mono-specimen text-[#d8ceb8]"><p class="text-sm">No records found in records.json.</p></div>';
                 return;
             }
 
@@ -443,16 +231,15 @@
                     if (imgSrc && !imgSrc.startsWith('http') && !imgSrc.startsWith('/')) {
                         imgSrc = './' + imgSrc;
                     }
-                    mediaHtml = '<img src="' + imgSrc + '" alt="' + (record.title || 'Specimen') + '" class="w-full h-full object-cover rounded-xl" onerror="this.onerror=null; this.parentElement.innerHTML=\'<span class=\\\'text-xs text-[#8c816f] font-mono-specimen px-2 text-center\\\'>Image asset not found: ' + fileSrc + '</span>\';">';
+                    mediaHtml = '<img src="' + imgSrc + '" alt="' + (record.title || 'Specimen') + '" class="w-full h-full object-cover rounded-xl grayscale-[15%] contrast-[105%] sepia-[15%]" onerror="this.onerror=null; this.parentElement.innerHTML=\'<span class=\\\'text-xs text-[#5a4d3f] font-mono-specimen px-2 text-center\\\'>Image asset not found: ' + fileSrc + '</span>\';">';
                 } else if (recType === 'sound' || recType === 'audio' || fileSrc.match(/\.(mp3|wav|ogg|m4a)$/i)) {
                     var audioSrc = fileSrc;
                     if (audioSrc && !audioSrc.startsWith('http') && !audioSrc.startsWith('/')) {
                         audioSrc = './' + audioSrc;
                     }
-                    mediaHtml = '<div class="flex flex-col items-center justify-center w-full h-full space-y-3 bg-[#eae2d0] rounded-xl p-4 border border-[#d2c5af]"><div class="w-10 h-10 rounded-full bg-[#dfd4be] flex items-center justify-center text-[#544a40]"><svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></div><audio controls class="w-full max-w-[240px] h-8" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'block\';"><source src="' + audioSrc + '" type="audio/mpeg">Your browser does not support audio.</audio><span class="text-[10px] text-[#7a6f5d] font-mono-specimen truncate max-w-[220px]" style="display:none;">Audio file not found: ' + fileSrc + '</span><span class="text-[10px] text-[#7a6f5d] font-mono-specimen truncate max-w-[220px]">' + fileSrc + '</span></div>';
+                    mediaHtml = '<div class="flex flex-col items-center justify-center w-full h-full space-y-3 bg-[#c7b79a] rounded-xl p-4 border border-[#ab997a]"><div class="w-10 h-10 rounded-full bg-[#b09e80] flex items-center justify-center text-[#2b2319] shadow-inner"><svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></div><audio controls class="w-full max-w-[240px] h-8" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'block\';"><source src="' + audioSrc + '" type="audio/mpeg">Your browser does not support audio.</audio><span class="text-[10px] text-[#5a4d3f] font-mono-specimen truncate max-w-[220px]" style="display:none;">Audio file not found: ' + fileSrc + '</span><span class="text-[10px] text-[#5a4d3f] font-mono-specimen truncate max-w-[220px]">' + fileSrc + '</span></div>';
                 } else {
-                    // Text specimen container with scrollbar always visible, no "Text Specimen" header badge
-                    mediaHtml = '<div class="w-full h-full bg-[#f8f5ee] rounded-xl p-4 flex flex-col justify-start items-start text-left overflow-y-scroll always-scrollable border border-[#d8cebe] text-content-area-' + index + '"><div class="w-full text-xs not-italic font-serif text-[#2b2621] text-file-body whitespace-pre-wrap leading-relaxed">Loading text...</div></div>';
+                    mediaHtml = '<div class="w-full h-full bg-[#f4ecd8] rounded-xl p-4 flex flex-col justify-start items-start text-left overflow-y-scroll always-scrollable border border-[#b8a688] text-file-body"><div class="w-full text-xs not-italic font-serif text-[#1f1b17] whitespace-pre-wrap leading-relaxed">Loading text...</div></div>';
                 }
 
                 var catId = record.id || ('REC-00' + (index + 1));
@@ -464,71 +251,70 @@
                 var notCapturedVal = record.not_captured || 'None recorded.';
 
                 cardContainer.innerHTML = '' +
-                    '<div class="card-face card-front bg-[#faf7f2] rounded-2xl shadow-lg p-5 flex flex-col justify-between border border-[#e2d8c8] box-border">' +
-                        '<div class="w-full h-[160px] bg-[#f0eae1] rounded-xl overflow-hidden flex flex-col items-center justify-center border-2 border-dashed border-[#d2c5af] text-[#8c816f] flex-shrink-0">' +
+                    '<div class="card-face card-front bg-[#e5dbc6] rounded-2xl shadow-xl p-5 flex flex-col justify-between border-2 border-[#bfae92] box-border">' +
+                        '<div class="w-full h-[160px] bg-[#d8ccb4] rounded-xl overflow-hidden flex flex-col items-center justify-center border-2 border-dashed border-[#a89679] text-[#5a4d3f] flex-shrink-0 shadow-inner">' +
                             mediaHtml +
                         '</div>' +
                         '<div class="flex flex-col items-center text-center my-auto py-2">' +
-                            '<span class="mb-1.5 px-2.5 py-0.5 text-[9px] font-mono-specimen font-semibold uppercase tracking-widest bg-[#ede6dc] text-[#544a40] rounded-full">' + (record.type || 'record') + '</span>' +
-                            '<h2 class="text-sm font-semibold text-[#2b2621] mb-2 leading-snug line-clamp-2">' + recTitle + '</h2>' +
-                            /* Date and place rendered on two separate rows */
-                            '<div class="text-[11px] text-[#7a6f5d] font-serif leading-snug w-full space-y-1">' +
-                                '<span class="block font-medium text-[#423a32]">' + recDate + '</span>' +
-                                '<span class="block text-[#7a6f5d] px-1">' + recPlace + '</span>' +
+                            '<div class="flex items-center space-x-1.5 mb-1.5">' +
+                                '<span class="px-2.5 py-0.5 text-[9px] font-mono-specimen font-bold uppercase tracking-widest bg-[#c9bba2] text-[#3b3126] rounded">' + (record.type || 'record') + '</span>' +
+                                '<span class="text-[9px] font-mono-specimen text-[#8b261b] font-bold">香港</span>' +
+                            '</div>' +
+                            '<h2 class="text-sm font-bold text-[#1f1b17] mb-2 leading-snug line-clamp-2">' + recTitle + '</h2>' +
+                            '<div class="text-[11px] text-[#4d4033] font-serif leading-snug w-full space-y-1">' +
+                                '<span class="block font-semibold text-[#1f1b17]">' + recDate + '</span>' +
+                                '<span class="block text-[#43362a] px-1 italic">' + recPlace + '</span>' +
                             '</div>' +
                         '</div>' +
                         '<div class="flex-shrink-0 pt-1">' +
-                            '<button onclick="handleArchive(' + index + ')" class="w-full py-2 bg-[#423a32] hover:bg-[#2b2621] active:bg-[#1a1714] text-[#f3efe6] font-medium rounded-xl transition-all shadow-sm cursor-pointer text-xs font-mono-specimen tracking-wider">' +
-                                'Archive this' +
+                            '<button onclick="handleArchive(' + index + ')" class="w-full py-2 bg-[#2b2319] hover:bg-[#1a150f] active:bg-[#0a0806] text-[#f4ecd8] font-medium rounded-xl transition-all shadow cursor-pointer text-xs font-mono-specimen tracking-wider border border-[#524433]">' +
+                                'Archive this &bull; 翻轉' +
                             '</button>' +
                         '</div>' +
                     '</div>' +
-                    '<div class="card-face card-back bg-[#f5efe4] rounded-2xl shadow-lg p-4 flex flex-col justify-between border border-[#c8bc8b]/40 box-border font-mono-specimen">' +
+                    '<div class="card-face card-back bg-[#dfd3bc] rounded-2xl shadow-xl p-4 flex flex-col justify-between border-2 border-[#7a5f3f]/50 box-border font-mono-specimen">' +
                         '<div class="flex-grow overflow-y-auto pr-1 flex flex-col min-h-0 always-scrollable">' +
-                            '<div class="flex justify-between items-center border-b border-[#d8cebe] pb-2 mb-2 flex-shrink-0">' +
-                                '<span class="text-[9px] tracking-wider text-[#7a6f5d] uppercase">SPECIMEN RECORD</span>' +
-                                '<span class="text-[10px] font-bold text-[#423a32]">CAT. #' + catId + '</span>' +
+                            '<div class="flex justify-between items-center border-b border-[#b5a386] pb-2 mb-2 flex-shrink-0">' +
+                                '<span class="text-[9px] tracking-wider text-[#665540] uppercase font-bold">SPECIMEN RECORD &bull; 檔案</span>' +
+                                '<span class="text-[10px] font-bold text-[#8b261b] bg-[#d2c4aa] px-1.5 py-0.5 rounded">CAT. #' + catId + '</span>' +
                             '</div>' +
-                            '<div class="space-y-2 text-[11px] text-[#2b2621] flex-grow">' +
+                            '<div class="space-y-2 text-[11px] text-[#1f1b17] flex-grow">' +
                                 '<div>' +
-                                    '<span class="block text-[8px] tracking-wider text-[#7a6f5d] uppercase">Title</span>' +
-                                    '<p class="font-medium mt-0.5 decay-value text-[#2b2621] leading-snug">' + recTitle + '</p>' +
+                                    '<span class="block text-[8px] tracking-wider text-[#665540] uppercase font-semibold">Title</span>' +
+                                    '<p class="font-medium mt-0.5 decay-value text-[#1f1b17] leading-snug">' + recTitle + '</p>' +
                                 '</div>' +
                                 '<div>' +
-                                    '<span class="block text-[8px] tracking-wider text-[#7a6f5d] uppercase">Date and place</span>' +
-                                    /* Date and place on two separate lines on card back */
-                                    '<div class="font-medium mt-0.5 decay-value text-[#2b2621] leading-snug space-y-1">' +
-                                        '<span class="block text-[#423a32] font-semibold">' + recDate + '</span>' +
-                                        '<span class="block text-[#544a40] break-words">' + recPlace + '</span>' +
+                                    '<span class="block text-[8px] tracking-wider text-[#665540] uppercase font-semibold">Date and place</span>' +
+                                    '<div class="font-medium mt-0.5 decay-value text-[#1f1b17] leading-snug space-y-1">' +
+                                        '<span class="block text-[#1f1b17] font-semibold">' + recDate + '</span>' +
+                                        '<span class="block text-[#43362a] break-words italic">' + recPlace + '</span>' +
                                     '</div>' +
                                 '</div>' +
                                 '<div>' +
-                                    '<span class="block text-[8px] tracking-wider text-[#7a6f5d] uppercase">Recorded by / Certainty</span>' +
-                                    '<p class="font-medium mt-0.5 decay-value text-[#2b2621]">' + recorderName + certaintyVal + '</p>' +
+                                    '<span class="block text-[8px] tracking-wider text-[#665540] uppercase font-semibold">Recorded by / Certainty</span>' +
+                                    '<p class="font-medium mt-0.5 decay-value text-[#1f1b17]">' + recorderName + certaintyVal + '</p>' +
                                 '</div>' +
-                                /* Expandable "What was not captured" block taking as many rows as needed */
                                 '<div class="pb-1 flex-grow">' +
-                                    '<span class="block text-[8px] tracking-wider text-[#7a6f5d] uppercase mb-0.5">What was not captured</span>' +
-                                    '<p class="font-medium text-[#544a40] italic decay-value-delayed whitespace-normal break-words leading-relaxed text-[11px] overflow-visible pr-1">' + notCapturedVal + '</p>' +
+                                    '<span class="block text-[8px] tracking-wider text-[#665540] uppercase font-semibold mb-0.5">What was not captured</span>' +
+                                    '<p class="font-medium text-[#43362a] italic decay-value-delayed whitespace-normal break-words leading-relaxed text-[11px] overflow-visible pr-1">' + notCapturedVal + '</p>' +
                                 '</div>' +
                             '</div>' +
                         '</div>' +
-                        '<div class="pt-2 mt-2 border-t border-[#d8cebe]/40 flex-shrink-0">' +
-                            '<button onclick="handleFlipBack(' + index + ')" class="w-full py-1.5 bg-[#d8cebe]/40 hover:bg-[#d8cebe] text-[#423a32] text-[10px] font-bold uppercase tracking-wider rounded-lg transition-all cursor-pointer border border-[#c8bc8b]/50">' +
-                                'Flip to Front' +
+                        '<div class="pt-2 mt-2 border-t border-[#b5a386]/50 flex-shrink-0">' +
+                            '<button onclick="handleFlipBack(' + index + ')" class="w-full py-1.5 bg-[#d2c4aa] hover:bg-[#bfae92] text-[#2b2319] text-[10px] font-bold uppercase tracking-wider rounded-lg transition-all cursor-pointer border border-[#7a5f3f]/40 shadow-sm">' +
+                                'Flip to Front &bull; 返回' +
                             '</button>' +
                         '</div>' +
                     '</div>';
 
                 wrapper.appendChild(cardContainer);
 
-                // Fetch text files asynchronously with robust fallback if local files aren't found
                 if (recType === 'text' && fileSrc) {
                     var txtSrc = fileSrc;
                     if (!txtSrc.startsWith('http') && !txtSrc.startsWith('/')) {
                         txtSrc = './' + txtSrc;
                     }
-                    var bodyElem = cardContainer.querySelector('.text-file-body');
+                    var bodyElem = cardContainer.querySelector('.text-file-body div');
                     fetch(txtSrc)
                         .then(function(res) {
                             if (!res.ok) throw new Error('Failed to load text file');
